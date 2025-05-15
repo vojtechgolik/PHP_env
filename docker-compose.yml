@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  php:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - USERNAME=${USERNAME}
+      - HOMEPATH=${HOMEPATH}
+      - USERPROFILE=${USERPROFILE} # pass windows env variables
+    volumes:
+      - ./index.php:/var/www/html/index.php 
